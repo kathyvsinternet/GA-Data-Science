@@ -1,0 +1,59 @@
+// Files
+
+weinstein_films.csv
+- imdb_id
+- title
+- year
+
+weinstein_film_credits.csv
+- moviedb_id
+- person_id (moviedb)
+- name
+- role
+- gender
+
+weinstein_film_lookup.
+- imdb_id
+- moviedb_id
+
+weinstein_person_filmography
+- imdb_id
+- person_id (imdb)
+- role
+- title
+- type
+- url
+- year
+
+weinstein_person_summary_table
+- person_id (imdb)
+- name
+- gender
+- film_counts
+- weinstein_project_count
+- weinstein_percentage
+- is_abuser
+
+weinstein_person_lookup
+- moviedb_id
+- imdb_id
+
+
+// Connections
+
+weinstein_films.csv (a) connects to weinstein_film_credits.csv (b) using weinstein_film_lookup.csv (c)where a.imdb_id = c.imdb_id and b.moviedb_id = c.moviedb_id
+
+weinstein_person_filmography (a) connects to weinstein_person_summary_table (b) on a.person_id = b.person_id
+
+weinstein_person_filmography (a) connects to weinstein_film_credits (b) on a.person_id = b.person_id and using weinstein_film_lookup (c) so a.imdb_id = c.imdb_id and b.moviedb_id = c.moviedb_id
+
+
+
+
+
+
+
+
+
+
+
